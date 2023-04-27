@@ -37,5 +37,5 @@ func main() {
 	fmt.Printf("Thank you %v %v. You have purchased %v tickets to %v. Please check %v for your confirmation.\n", firstName, lastName, userTickets, conferenceName, email)
 	fmt.Printf("There are %v tickets remaining.\n", remainingTickets)
 
-	fmt.Printf("Bookings: %v", bookings)
+	fmt.Printf("Bookings: %v\n", bookings)
 }
