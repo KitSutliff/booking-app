@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
 	conferenceName := "Go Conference"
@@ -31,11 +34,16 @@ func main() {
 		fmt.Scan(&userTickets)
 
 		remainingTickets = remainingTickets - userTickets
-		bookings = append(bookings, firstName+" "+lastName+",")
+		bookings = append(bookings, firstName+" "+lastName)
 
 		fmt.Printf("Thank you %v %v. You have purchased %v tickets to %v. Please check %v for your confirmation.\n", firstName, lastName, userTickets, conferenceName, email)
 		fmt.Printf("There are %v tickets remaining.\n", remainingTickets)
 
-		fmt.Printf("Bookings: %v\n", bookings)
+		firstNames := []string{}
+		for _, booking := range bookings {
+			var names = strings.Fields(booking)
+			firstNames = append(firstNames, names[0])
+		}
+		fmt.Printf("These are all our bookings: %v\n", firstNames)
 	}
 }
