@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"time"
 )
 
 const conferenceTickets int = 50
@@ -107,6 +108,8 @@ func bookTicket(firstName string, lastName string, email string, userTickets uin
 }
 
 func sendTickets(firstName string, lastName string, email string, userTickets uint) {
+	//delays action by 10 seconds
+	time.Sleep(10 * time.Second)
 	var ticket = fmt.Sprintf("%v tickets have for %v %v\n", userTickets, firstName, lastName)
 	fmt.Println("###########################")
 	fmt.Printf("Sending tickets:\n %v \n to email address %v\n", ticket, email)
